@@ -68,10 +68,10 @@ EOF
 	export _WORDS=".palavras.txt"
 
 	# get the file if it is not in the game directory
-	[ ! -e $_WORDS ] && wget $_URL -O $_WORDS 2>/dev/null;
+	[[ ! -e $_WORDS ]] && wget $_URL -O $_WORDS 2>/dev/null;
 
 	# if there is no _PALAVRA variable it creates it
-	if [ -z "$_RAND" ]; then
+	if [[ -z "$_RAND" ]]; then
 
 		# count the words in the _WORDS file
 		_ARRAY_PALAVRAS=$(cat $_WORDS | wc -l);
@@ -162,7 +162,7 @@ EOF
 	 # read 1 to 1 character of the _PALAVRA string, until you find the letter that is the same as that typed by the player
 	 # If you find concatenation to _POSICAO (_POSICAO can be 134, it means that the letter entered is in positions 1, 3 and 4)
 	 local _LETRA=${_PALAVRA:$i:1};
-	 if [ "$_LETRA" == "$_X" ];then
+	 if [[ "$_LETRA" == "$_X" ]];then
 	 	_POSICAO="$_POSICAO$i"
 	 fi
 	 
@@ -213,7 +213,7 @@ EOF
 		echo
 	
 		# also show color
-		[ "$_PALAVRA" == "$_NEW" ] && _FORCA=$_VENCE && _FASE="6";
+		[[ "$_PALAVRA" == "$_NEW" ]] && _FORCA=$_VENCE && _FASE="6";
 		echo -ne "\033[2K \033[G\033[34;1m$_FORCA\033[m";
 		echo -e "\033[99;1m\n\n░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░$_TITULO░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n\n\033[m";
 	
@@ -225,13 +225,13 @@ EOF
 	
 		# Listen to what was typed and process
 		# If the player presses CTRL + E
-		if [ "$_X" == "" ]; then
+		if [[ "$_X" == "" ]]; then
 			setterm -cursor on;
 			reset;
 			break;
 			exit 0;
 		# If the player presses CTRL + A
-		elif [ "$_X" == "" ]; then	
+		elif [[ "$_X" == "" ]]; then	
 			setterm -cursor on;
 			break ;
 		# If the player presses the directional keys, it picks up the letter of the key and treats like attempt
@@ -252,28 +252,28 @@ EOF
 	 	else
 	 		
 	 		# creates the head
-	 		if [ "$_FASE" == "" ]; then
+	 		if [[ "$_FASE" == "" ]]; then
 	 			
 	 			tput cup 0 0; 			
 		 		_FORCA=$_CABECA;
 		 		export _FASE="1";
 		 		continue;
 		 	# creates the neck
-	 		elif [ "$_FASE" == "1" ]; then
+	 		elif [[ "$_FASE" == "1" ]]; then
 	 			
 	 			tput cup 0 0; 			
 		 		_FORCA=$_PESCOCO;
 		 		export _FASE="2";
 		 		continue;
 		 	# creates the body
-	 		elif [ "$_FASE" == "2" ]; then
+	 		elif [[ "$_FASE" == "2" ]]; then
 	 			
 	 			tput cup 0 0; 			
 		 		_FORCA=$_CORPO;
 		 		export _FASE="3";
 		 		continue;
 		 	# creates the legs
-	 		elif [ "$_FASE" == "3" ]; then
+	 		elif [[ "$_FASE" == "3" ]]; then
 	 			
 	 			tput cup 0 0; 			
 		 		_FORCA=$_PERNA;
@@ -281,7 +281,7 @@ EOF
 		 		continue;
 		 		
 		 	# game over
-	 		elif [ "$_FASE" == "4" ]; then
+	 		elif [[ "$_FASE" == "4" ]]; then
 	 			
 	 			tput cup 0 0;
 	 			export _RESET="\033[40;37;1m${_lang[13]}: [Ctrl + E]\033[m"
