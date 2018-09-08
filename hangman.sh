@@ -64,7 +64,7 @@ EOF
 	export _COLS=130
 
 	export _TITULO=" ${_lang[11]} "; # variavel de interação com o jogador
-	export _URL="https://raw.githubusercontent.com/terminalrootsh/jogodaforca/master/.palavras.txt"
+	export _URL="https://github.com/terroo/hangman-game/edit/master/palavras.txt"
 	export _WORDS=".palavras.txt"
 
 	# get the file if it is not in the game directory
