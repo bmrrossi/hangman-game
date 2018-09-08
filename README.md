@@ -4,7 +4,7 @@ Game of the Forca written in Shell Script with words of Free Software
 - Open Source Personalities
 - Applications
 
-# Instalation
+# Installation
 
 ```sh
 git clone https://github.com/terroo/hangman-game.git
