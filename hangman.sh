@@ -64,7 +64,7 @@ EOF
 	export _COLS=130
 
 	export _TITULO=" ${_lang[11]} "; # variavel de interação com o jogador
-	export _URL="https://github.com/terroo/hangman-game/edit/master/.palavras.txt"
+	export _URL="https://raw.githubusercontent.com/terroo/hangman-game/master/.palavras.txt"
 	export _WORDS=".palavras.txt"
 
 	# get the file if it is not in the game directory
@@ -286,7 +286,7 @@ EOF
 	 			tput cup 0 0;
 	 			export _RESET="\033[40;37;1m${_lang[13]}: [Ctrl + E]\033[m"
 	 			export _EXIT="░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"
-	 			export _TITULO="${_lang[15]}: $_PALAVRA";
+	 			export _TITULO=" ${_lang[15]}: $_PALAVRA ";
 		 		export _FORCA=$_ENFORCA;
 		 		export _FASE="5";
 		 		export _PALAVRA=" ";
