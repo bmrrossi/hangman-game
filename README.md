@@ -1,5 +1,5 @@
 # hangman-game
-Game of the Forca written in Shell Script with words of Free Software
+Hangman Game written in Shell Script with words of Free Software
 - Distros
 - Open Source Personalities
 - Applications
